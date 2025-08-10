@@ -1,0 +1,26 @@
+---
+import FooterBox from "./footerBox.astro"
+
+---
+
+
+<footer class="bg-amber-900 pt-20">
+    <div class="max-w-7xl mx-auto mt-10 grid grid-cols-1  lg:grid-cols-3 gap-5">
+        
+        <FooterBox heading="UBICACIÓN">
+            <p>Perito Moreno 200</p>
+            <p>Buenos Aires, Argentina</p>
+        </FooterBox>
+         <FooterBox heading="RESERVACIÓN">
+            <p>Tel:011-526889</p>
+            <a href="tel:+011-526889">Llamar</a>
+         </FooterBox>
+         <FooterBox heading="HORARIO">
+            <p>Lun - Vie: 8:00 - 20:00</p>
+            <p>Sab - Dom: 9:00 - 22:00</p> 
+         </FooterBox>
+    </div>
+    <p class="py-10 text-center text-white text-sm">
+        Todos los derechos reservados. La Cafetería 1939. &copy; {new Date().getFullYear()}
+    </p>  
+</footer>
