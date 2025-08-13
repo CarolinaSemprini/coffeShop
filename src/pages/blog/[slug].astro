@@ -1,0 +1,44 @@
+---
+import PostMeta from "@/components/blog/PostMeta.astro";
+import PostCategories from "@/components/blog/PostCategories.astro";
+import { Picture } from "astro:assets";
+
+import Layout from "@/layouts/Layout.astro";
+import { PostSchema } from "@/types";
+
+export const prerender = false;
+
+const {slug} =Astro.params;
+const url = `${import.meta.env.API_URL}/posts?slug=${slug}`;
+const res = await fetch (url);
+const json = await res.json();
+const post = PostSchema.safeParse(json[0])
+if(!post.success)return Astro.redirect('/404');
+const { title, featured_image, date, category_details, content } = post.data;
+
+---
+<Layout
+    title={title.rendered}
+   subtitle={title.rendered}
+   bgImage={featured_image.full.url}
+
+>
+    <article class="space-y-5 max-w-4xl mx-auto">
+        <PostMeta date={date}/>
+            {category_details.map(cat => <PostCategories name={cat.name} slug={cat.slug} />)}
+
+        <Picture
+        src={featured_image.full.url}
+        alt={`Imagen del Post:${title.rendered}`}
+        width={featured_image.full.width}
+        height={featured_image.full.height}
+        formats={["avif", "webp", "jpeg"]}
+        class="w-full"
+    />
+
+    <div set:html={content.rendered} class="text-lg space-y-3 mt-5"></div>
+    </article>
+
+
+
+</Layout>
