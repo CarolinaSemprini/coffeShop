@@ -46,3 +46,6 @@ h1, h2, h3 {
   display:block;
   margin-inline:auto;
 }
+@utility bg-menu-image{
+  background-image:url('../assets/menu_artwork.svg');
+}
