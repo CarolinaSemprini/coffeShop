@@ -49,3 +49,11 @@ h1, h2, h3 {
 @utility bg-menu-image{
   background-image:url('../assets/menu_artwork.svg');
 }
+.input-label {
+  @apply text-amber-900 uppercase font-bold text-base mb-1 block;
+}
+
+.input-field {
+  @apply border-amber-900 border-2 px-2 py-1 rounded-md
+         focus:outline-none focus:ring-2 focus:ring-amber-500;
+}
