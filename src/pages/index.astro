@@ -1,6 +1,6 @@
 ---
    
-  
+  import HomeGallery from "@/components/gallery/HomeGallery.astro";
    import Layout from "../layouts/Layout.astro";
    import CategoryIconLabel from "@/components/ui/CategoryIconLabel.astro";
    import bg from '../assets/bg_home.jpg';
@@ -34,6 +34,7 @@
 
     </div>
     
-  
+    <HomeGallery 
+        slot='after-main-content'/>
 
 </Layout>

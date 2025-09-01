@@ -24,8 +24,28 @@ export const contact ={
             z.string().min(30, {message:'el mensaje no puede ir vacio o es muy corto'})
              ),
         }),
-        handler:(input)=>{
-            console.log (input)
+        handler: async (input)=>{
+            const url =`${import.meta.env.HOME_URL}/wp-json/contact-form-7/v1/contact-forms/141/feedback`
+
+            const formData = new FormData()
+            formData.append('your-name', input.name)
+            formData.append('your-email', input.email)
+            formData.append('your-subject', input.subject)
+            formData.append('your-message', input.message)
+            formData.append('_wpcf7_unit_tag', "wpcf7-123")
+
+            const res = await fetch(url, {
+                method:'POST',
+                body: formData
+            })
+
+            await res.json()
+            
+
+            return{
+                error:false,
+                message: 'Tu mensaje ha sido enviado correctamente'
+            }
         }
     })
 }
