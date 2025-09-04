@@ -4,6 +4,7 @@
    import Layout from "../layouts/Layout.astro";
    import CategoryIconLabel from "@/components/ui/CategoryIconLabel.astro";
    import bg from '../assets/bg_home.jpg';
+import ProductsMenu from "@/components/menu/ProductsMenu.astro";
 
 ---
 <Layout 
@@ -36,5 +37,6 @@
     
     <HomeGallery 
         slot='after-main-content'/>
+    <ProductsMenu slot='after-main-content'/>
 
 </Layout>

@@ -1,4 +1,5 @@
 ---
+import { ClientRouter, fade, slide } from "astro:transitions";
 import "../styles/global.css";
 import Header from "../components/ui/Header.astro";
 import Footer from "../components/ui/footer.astro"; 
@@ -22,6 +23,7 @@ const { title,subtitle, bgImage} = Astro.props
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <ClientRouter/>
 
     <meta name="description" content="Cafetería desde 1939">            
     <meta name="keywords" content="Café, Cafetería, Tienda de café, Café en grano, Café molido">
@@ -33,14 +35,22 @@ const { title,subtitle, bgImage} = Astro.props
     <Header
         bgImage={bgImage}
         subtitle={subtitle}
+        transition:animate={slide({ duration:".5s"})}
         />
 
         <slot name="before-main-content>">
 
-        <main class="bg-white p-10 lg:p-20 max-w-7xl mx-auto lg:-mt-20 relative">
+        <main 
+        class="bg-white p-10 lg:p-20 max-w-7xl mx-auto lg:-mt-20 relative"
+       
+        >
+
+        <div transition:animate={slide({ duration:"1s"})} >
             <h2 class="text-amber-900 font-black text-center text-4xl pb-10 uppercase after:coffee-icon">
                 {title}</h2>
             <slot />
+        </div>
+            
         </main>
 
         <slot name="after-main-content">
