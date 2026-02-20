@@ -4,7 +4,7 @@
 @theme {
 
   --default-font-family: "Outfit", sans-serif;
-  --font-mono:"PT Sans". sans-serif;
+  --font-mono:"PT Sans", sans-serif;
 }
 
 :root {
@@ -13,16 +13,18 @@
   
 
     --color-coffee-50: #fcf8ee;
-    --color-coffe-100: #f5ebd0;
-    --color-coffe-200: #ead59d;
-    --color-coffe-300: #dfbb6a;
-    --color-coffe-400: #d7a648;
-    --color-coffe-500: #ce8a32;
-    --color-coffe-600: #b66b29;
-    --color-coffe-700: #975026;
-    --color-coffe-800: #7c3f24;
-    --color-coffe-900: #5e311e;
-    --color-coffe-950: #3a1a0e;
+    --color-coffee-100: #f5ebd0;
+    --color-coffee-200: #ead59d;
+    --color-coffee-300: #dfbb6a;
+    --color-coffee-400: #d7a648;
+    --color-coffee-500: #ce8a32;
+    --color-coffee-600: #b66b29;
+    --color-coffee-700: #975026;
+    --color-coffee-800: #7c3f24;
+    --color-coffee-900: #5e311e;
+    --color-coffee-950: #3a1a0e;
+    --color-amber-40: #77512e;
+
 
     --icon-size:6rem;
 
@@ -40,7 +42,7 @@ h1, h2, h3 {
   content:'';
   background-image: url('../assets/coffee.svg');
   background-size: var(--icon-size);
-  backgraund-position: center;
+  background-position: center;
   width: var(--icon-size);
   height: var(--icon-size);
   display:block;
@@ -57,3 +59,4 @@ h1, h2, h3 {
   @apply border-amber-900 border-2 px-2 py-1 rounded-md
          focus:outline-none focus:ring-2 focus:ring-amber-500;
 }
+html { scroll-behavior: smooth; }

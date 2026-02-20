@@ -17,7 +17,7 @@ const { title,subtitle, bgImage} = Astro.props
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cafetería desde 1939:{title}</title>
-    <link rel="stylesheet" href="/styles/global.css">
+    
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@ const { title,subtitle, bgImage} = Astro.props
     <meta name="keywords" content="Café, Cafetería, Tienda de café, Café en grano, Café molido">
     <meta name="author" content="Cafetería desde 1939">     
 </head>
-<body  style="background-color: var(--color-coffe-200);">
+<body  style="background-color: var(--color-amber-200);">
     
 
     <Header
@@ -46,7 +46,8 @@ const { title,subtitle, bgImage} = Astro.props
         >
 
         <div transition:animate={slide({ duration:"1s"})} >
-            <h2 class="text-amber-900 font-black text-center text-4xl pb-10 uppercase after:coffee-icon">
+            <h2 class="text-amber-900 font-black text-center text-4xl pb-10 uppercase after:coffee-icon 
+           transition-transform duration-500 hover:scale-110 hover:text-amber-600">
                 {title}</h2>
             <slot />
         </div>

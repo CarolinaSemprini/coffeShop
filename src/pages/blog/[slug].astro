@@ -1,12 +1,11 @@
 ---
+export const prerender = false;
 import PostMeta from "@/components/blog/PostMeta.astro";
 import PostCategories from "@/components/blog/PostCategories.astro";
 import { Picture } from "astro:assets";
 
 import Layout from "@/layouts/Layout.astro";
 import { PostSchema } from "@/types";
-
-export const prerender = false;
 
 const {slug} =Astro.params;
 const url = `${import.meta.env.API_URL}/posts?slug=${slug}`;
@@ -32,7 +31,7 @@ const { title, featured_image, date, category_details, content } = post.data;
         alt={`Imagen del Post:${title.rendered}`}
         width={featured_image.full.width}
         height={featured_image.full.height}
-        formats={["avif", "webp", "jpeg"]}
+        formats={["avif", "webp", "jpg"]}
         class="w-full"
     />
 
